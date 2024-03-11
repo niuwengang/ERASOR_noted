@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/g/workspace/opensource/catkin_ws/devel/share/gennodejs/ros/erasor/msg/node.js"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/share/gennodejs/ros/erasor/msg/node.js"
   "CMakeFiles/erasor_generate_messages_nodejs"
 )
 

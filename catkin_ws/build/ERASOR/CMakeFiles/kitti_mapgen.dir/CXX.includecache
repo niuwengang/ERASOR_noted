@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/g/workspace/opensource/catkin_ws/devel/include/erasor/node.h
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/include/erasor/node.h
 string
 -
 vector
@@ -34,7 +34,7 @@ sensor_msgs/CompressedImage.h
 sensor_msgs/NavSatFix.h
 -
 
-/home/g/workspace/opensource/catkin_ws/src/ERASOR/include/tools/erasor_utils.hpp
+/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/include/tools/erasor_utils.hpp
 cstdlib
 -
 ctime
@@ -118,23 +118,23 @@ std_msgs/Float32.h
 std_msgs/Int32.h
 -
 signal.h
-/home/g/workspace/opensource/catkin_ws/src/ERASOR/include/tools/signal.h
+/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/include/tools/signal.h
 
-/home/g/workspace/opensource/catkin_ws/src/ERASOR/src/mapgen/main.cpp
+/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/mapgen/main.cpp
 mapgen.hpp
-/home/g/workspace/opensource/catkin_ws/src/ERASOR/src/mapgen/mapgen.hpp
+/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/mapgen/mapgen.hpp
 
-/home/g/workspace/opensource/catkin_ws/src/ERASOR/src/mapgen/mapgen.hpp
+/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/mapgen/mapgen.hpp
 erasor/node.h
 -
 tools/erasor_utils.hpp
-/home/g/workspace/opensource/catkin_ws/src/ERASOR/src/mapgen/tools/erasor_utils.hpp
+/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/mapgen/tools/erasor_utils.hpp
 math.h
 -
 
-/home/g/workspace/opensource/catkin_ws/src/ERASOR/src/offline_map_updater/src/erasor_utils.cpp
+/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/src/erasor_utils.cpp
 tools/erasor_utils.hpp
-/home/g/workspace/opensource/catkin_ws/src/ERASOR/src/offline_map_updater/src/tools/erasor_utils.hpp
+/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/src/tools/erasor_utils.hpp
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string

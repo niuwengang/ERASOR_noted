@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/g/workspace/opensource/catkin_ws/devel/include/erasor/node.h"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/include/erasor/node.h"
   "CMakeFiles/erasor_generate_messages_cpp"
 )
 

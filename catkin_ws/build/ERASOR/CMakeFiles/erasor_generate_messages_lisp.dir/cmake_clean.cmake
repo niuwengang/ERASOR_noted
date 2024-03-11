@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/g/workspace/opensource/catkin_ws/devel/share/common-lisp/ros/erasor/msg/node.lisp"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/share/common-lisp/ros/erasor/msg/node.lisp"
   "CMakeFiles/erasor_generate_messages_lisp"
 )
 

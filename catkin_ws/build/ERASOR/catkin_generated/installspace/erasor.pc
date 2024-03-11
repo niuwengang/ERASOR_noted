@@ -1,4 +1,4 @@
-prefix=/home/g/workspace/opensource/catkin_ws/install
+prefix=/home/g/workspace/ERASOR_noted/catkin_ws/install
 
 Name: erasor
 Description: Description of erasor

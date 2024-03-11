@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/g/workspace/opensource/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/g/workspace/ERASOR_noted/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/g/workspace/opensource/catkin_ws/build
+CMAKE_BINARY_DIR = /home/g/workspace/ERASOR_noted/catkin_ws/build
 
 # Utility rule file for nodelet_topic_tools_gencfg.
 
@@ -63,10 +63,10 @@ ERASOR/CMakeFiles/nodelet_topic_tools_gencfg.dir/build: nodelet_topic_tools_genc
 .PHONY : ERASOR/CMakeFiles/nodelet_topic_tools_gencfg.dir/build
 
 ERASOR/CMakeFiles/nodelet_topic_tools_gencfg.dir/clean:
-	cd /home/g/workspace/opensource/catkin_ws/build/ERASOR && $(CMAKE_COMMAND) -P CMakeFiles/nodelet_topic_tools_gencfg.dir/cmake_clean.cmake
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR && $(CMAKE_COMMAND) -P CMakeFiles/nodelet_topic_tools_gencfg.dir/cmake_clean.cmake
 .PHONY : ERASOR/CMakeFiles/nodelet_topic_tools_gencfg.dir/clean
 
 ERASOR/CMakeFiles/nodelet_topic_tools_gencfg.dir/depend:
-	cd /home/g/workspace/opensource/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/g/workspace/opensource/catkin_ws/src /home/g/workspace/opensource/catkin_ws/src/ERASOR /home/g/workspace/opensource/catkin_ws/build /home/g/workspace/opensource/catkin_ws/build/ERASOR /home/g/workspace/opensource/catkin_ws/build/ERASOR/CMakeFiles/nodelet_topic_tools_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/g/workspace/ERASOR_noted/catkin_ws/src /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR /home/g/workspace/ERASOR_noted/catkin_ws/build /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/CMakeFiles/nodelet_topic_tools_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ERASOR/CMakeFiles/nodelet_topic_tools_gencfg.dir/depend
 

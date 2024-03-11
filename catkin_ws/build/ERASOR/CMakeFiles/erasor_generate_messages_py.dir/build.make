@@ -43,42 +43,42 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/g/workspace/opensource/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/g/workspace/ERASOR_noted/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/g/workspace/opensource/catkin_ws/build
+CMAKE_BINARY_DIR = /home/g/workspace/ERASOR_noted/catkin_ws/build
 
 # Utility rule file for erasor_generate_messages_py.
 
 # Include the progress variables for this target.
 include ERASOR/CMakeFiles/erasor_generate_messages_py.dir/progress.make
 
-ERASOR/CMakeFiles/erasor_generate_messages_py: /home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py
-ERASOR/CMakeFiles/erasor_generate_messages_py: /home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/__init__.py
+ERASOR/CMakeFiles/erasor_generate_messages_py: /home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py
+ERASOR/CMakeFiles/erasor_generate_messages_py: /home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/__init__.py
 
 
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /home/g/workspace/opensource/catkin_ws/src/ERASOR/msg/node.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/PointCloud2.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/PointField.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/NavSatStatus.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/NavSatFix.msg
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/g/workspace/opensource/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG erasor/node"
-	cd /home/g/workspace/opensource/catkin_ws/build/ERASOR && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/g/workspace/opensource/catkin_ws/src/ERASOR/msg/node.msg -Ierasor:/home/g/workspace/opensource/catkin_ws/src/ERASOR/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p erasor -o /home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/msg/node.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/NavSatFix.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/PointCloud2.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/PointField.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py: /opt/ros/noetic/share/sensor_msgs/msg/NavSatStatus.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/g/workspace/ERASOR_noted/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG erasor/node"
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/msg/node.msg -Ierasor:/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p erasor -o /home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg
 
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/__init__.py: /home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/g/workspace/opensource/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for erasor"
-	cd /home/g/workspace/opensource/catkin_ws/build/ERASOR && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg --initpy
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/__init__.py: /home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/g/workspace/ERASOR_noted/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for erasor"
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg --initpy
 
 erasor_generate_messages_py: ERASOR/CMakeFiles/erasor_generate_messages_py
-erasor_generate_messages_py: /home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py
-erasor_generate_messages_py: /home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/__init__.py
+erasor_generate_messages_py: /home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/_node.py
+erasor_generate_messages_py: /home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor/msg/__init__.py
 erasor_generate_messages_py: ERASOR/CMakeFiles/erasor_generate_messages_py.dir/build.make
 
 .PHONY : erasor_generate_messages_py
@@ -89,10 +89,10 @@ ERASOR/CMakeFiles/erasor_generate_messages_py.dir/build: erasor_generate_message
 .PHONY : ERASOR/CMakeFiles/erasor_generate_messages_py.dir/build
 
 ERASOR/CMakeFiles/erasor_generate_messages_py.dir/clean:
-	cd /home/g/workspace/opensource/catkin_ws/build/ERASOR && $(CMAKE_COMMAND) -P CMakeFiles/erasor_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR && $(CMAKE_COMMAND) -P CMakeFiles/erasor_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : ERASOR/CMakeFiles/erasor_generate_messages_py.dir/clean
 
 ERASOR/CMakeFiles/erasor_generate_messages_py.dir/depend:
-	cd /home/g/workspace/opensource/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/g/workspace/opensource/catkin_ws/src /home/g/workspace/opensource/catkin_ws/src/ERASOR /home/g/workspace/opensource/catkin_ws/build /home/g/workspace/opensource/catkin_ws/build/ERASOR /home/g/workspace/opensource/catkin_ws/build/ERASOR/CMakeFiles/erasor_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/g/workspace/ERASOR_noted/catkin_ws/src /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR /home/g/workspace/ERASOR_noted/catkin_ws/build /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/CMakeFiles/erasor_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ERASOR/CMakeFiles/erasor_generate_messages_py.dir/depend
 

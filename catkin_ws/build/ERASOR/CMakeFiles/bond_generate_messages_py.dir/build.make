@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/g/workspace/opensource/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/g/workspace/ERASOR_noted/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/g/workspace/opensource/catkin_ws/build
+CMAKE_BINARY_DIR = /home/g/workspace/ERASOR_noted/catkin_ws/build
 
 # Utility rule file for bond_generate_messages_py.
 
@@ -63,10 +63,10 @@ ERASOR/CMakeFiles/bond_generate_messages_py.dir/build: bond_generate_messages_py
 .PHONY : ERASOR/CMakeFiles/bond_generate_messages_py.dir/build
 
 ERASOR/CMakeFiles/bond_generate_messages_py.dir/clean:
-	cd /home/g/workspace/opensource/catkin_ws/build/ERASOR && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : ERASOR/CMakeFiles/bond_generate_messages_py.dir/clean
 
 ERASOR/CMakeFiles/bond_generate_messages_py.dir/depend:
-	cd /home/g/workspace/opensource/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/g/workspace/opensource/catkin_ws/src /home/g/workspace/opensource/catkin_ws/src/ERASOR /home/g/workspace/opensource/catkin_ws/build /home/g/workspace/opensource/catkin_ws/build/ERASOR /home/g/workspace/opensource/catkin_ws/build/ERASOR/CMakeFiles/bond_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/g/workspace/ERASOR_noted/catkin_ws/src /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR /home/g/workspace/ERASOR_noted/catkin_ws/build /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/CMakeFiles/bond_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ERASOR/CMakeFiles/bond_generate_messages_py.dir/depend
 

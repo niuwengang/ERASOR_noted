@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/g/workspace/opensource/catkin_ws/devel/lib/erasor/offline_map_updater"
-  "/home/g/workspace/opensource/catkin_ws/devel/lib/erasor/offline_map_updater.pdb"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/erasor/offline_map_updater"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/erasor/offline_map_updater.pdb"
   "CMakeFiles/offline_map_updater.dir/src/offline_map_updater/main_kitti.cpp.o"
   "CMakeFiles/offline_map_updater.dir/src/offline_map_updater/src/OfflineMapUpdater.cpp.o"
   "CMakeFiles/offline_map_updater.dir/src/offline_map_updater/src/erasor.cpp.o"

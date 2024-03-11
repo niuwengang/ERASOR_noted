@@ -1,8 +1,8 @@
-# Install script for directory: /home/g/workspace/opensource/catkin_ws/src/ERASOR
+# Install script for directory: /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/g/workspace/opensource/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/g/workspace/ERASOR_noted/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,53 +38,53 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor/msg" TYPE FILE FILES "/home/g/workspace/opensource/catkin_ws/src/ERASOR/msg/node.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor/msg" TYPE FILE FILES "/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/msg/node.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor/cmake" TYPE FILE FILES "/home/g/workspace/opensource/catkin_ws/build/ERASOR/catkin_generated/installspace/erasor-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor/cmake" TYPE FILE FILES "/home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/catkin_generated/installspace/erasor-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/g/workspace/opensource/catkin_ws/devel/include/erasor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/g/workspace/ERASOR_noted/catkin_ws/devel/include/erasor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/g/workspace/opensource/catkin_ws/devel/share/roseus/ros/erasor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/g/workspace/ERASOR_noted/catkin_ws/devel/share/roseus/ros/erasor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/g/workspace/opensource/catkin_ws/devel/share/common-lisp/ros/erasor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/g/workspace/ERASOR_noted/catkin_ws/devel/share/common-lisp/ros/erasor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/g/workspace/opensource/catkin_ws/devel/share/gennodejs/ros/erasor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/g/workspace/ERASOR_noted/catkin_ws/devel/share/gennodejs/ros/erasor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/g/workspace/opensource/catkin_ws/devel/lib/python3/dist-packages/erasor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/python3/dist-packages/erasor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/g/workspace/opensource/catkin_ws/build/ERASOR/catkin_generated/installspace/erasor.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/catkin_generated/installspace/erasor.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor/cmake" TYPE FILE FILES "/home/g/workspace/opensource/catkin_ws/build/ERASOR/catkin_generated/installspace/erasor-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor/cmake" TYPE FILE FILES "/home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/catkin_generated/installspace/erasor-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor/cmake" TYPE FILE FILES
-    "/home/g/workspace/opensource/catkin_ws/build/ERASOR/catkin_generated/installspace/erasorConfig.cmake"
-    "/home/g/workspace/opensource/catkin_ws/build/ERASOR/catkin_generated/installspace/erasorConfig-version.cmake"
+    "/home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/catkin_generated/installspace/erasorConfig.cmake"
+    "/home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/catkin_generated/installspace/erasorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor" TYPE FILE FILES "/home/g/workspace/opensource/catkin_ws/src/ERASOR/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/erasor" TYPE FILE FILES "/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/package.xml")
 endif()
 

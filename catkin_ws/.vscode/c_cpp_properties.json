@@ -1,21 +1,17 @@
 {
   "configurations": [
     {
-      "browse": {
-        "databaseFilename": "${default}",
-        "limitSymbolsToIncludedHeaders": false
-      },
+      "name": "linux-gcc-x64",
       "includePath": [
-        "/home/g/workspace/opensource/catkin_ws/devel/include/**",
-        "/opt/ros/noetic/include/**",
-        "/home/g/workspace/opensource/catkin_ws/src/ERASOR/include/**",
-        "/usr/include/**"
+        "${workspaceFolder}/**"
       ],
-      "name": "ROS",
-      "intelliSenseMode": "gcc-x64",
       "compilerPath": "/usr/bin/gcc",
-      "cStandard": "gnu11",
-      "cppStandard": "c++14"
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "linux-gcc-x64",
+      "compilerArgs": [
+        ""
+      ]
     }
   ],
   "version": 4

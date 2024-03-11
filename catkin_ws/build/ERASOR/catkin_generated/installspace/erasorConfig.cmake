@@ -67,14 +67,14 @@ set(erasor_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(erasor_SOURCE_PREFIX /home/g/workspace/opensource/catkin_ws/src/ERASOR)
-  set(erasor_DEVEL_PREFIX /home/g/workspace/opensource/catkin_ws/devel)
+  set(erasor_SOURCE_PREFIX /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR)
+  set(erasor_DEVEL_PREFIX /home/g/workspace/ERASOR_noted/catkin_ws/devel)
   set(erasor_INSTALL_PREFIX "")
   set(erasor_PREFIX ${erasor_DEVEL_PREFIX})
 else()
   set(erasor_SOURCE_PREFIX "")
   set(erasor_DEVEL_PREFIX "")
-  set(erasor_INSTALL_PREFIX /home/g/workspace/opensource/catkin_ws/install)
+  set(erasor_INSTALL_PREFIX /home/g/workspace/ERASOR_noted/catkin_ws/install)
   set(erasor_PREFIX ${erasor_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/g/workspace/opensource/catkin_ws/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/g/workspace/ERASOR_noted/catkin_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

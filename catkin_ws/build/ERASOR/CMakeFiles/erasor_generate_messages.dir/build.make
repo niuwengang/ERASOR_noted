@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/g/workspace/opensource/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/g/workspace/ERASOR_noted/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/g/workspace/opensource/catkin_ws/build
+CMAKE_BINARY_DIR = /home/g/workspace/ERASOR_noted/catkin_ws/build
 
 # Utility rule file for erasor_generate_messages.
 
@@ -63,10 +63,10 @@ ERASOR/CMakeFiles/erasor_generate_messages.dir/build: erasor_generate_messages
 .PHONY : ERASOR/CMakeFiles/erasor_generate_messages.dir/build
 
 ERASOR/CMakeFiles/erasor_generate_messages.dir/clean:
-	cd /home/g/workspace/opensource/catkin_ws/build/ERASOR && $(CMAKE_COMMAND) -P CMakeFiles/erasor_generate_messages.dir/cmake_clean.cmake
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR && $(CMAKE_COMMAND) -P CMakeFiles/erasor_generate_messages.dir/cmake_clean.cmake
 .PHONY : ERASOR/CMakeFiles/erasor_generate_messages.dir/clean
 
 ERASOR/CMakeFiles/erasor_generate_messages.dir/depend:
-	cd /home/g/workspace/opensource/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/g/workspace/opensource/catkin_ws/src /home/g/workspace/opensource/catkin_ws/src/ERASOR /home/g/workspace/opensource/catkin_ws/build /home/g/workspace/opensource/catkin_ws/build/ERASOR /home/g/workspace/opensource/catkin_ws/build/ERASOR/CMakeFiles/erasor_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/g/workspace/ERASOR_noted/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/g/workspace/ERASOR_noted/catkin_ws/src /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR /home/g/workspace/ERASOR_noted/catkin_ws/build /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR /home/g/workspace/ERASOR_noted/catkin_ws/build/ERASOR/CMakeFiles/erasor_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ERASOR/CMakeFiles/erasor_generate_messages.dir/depend
 

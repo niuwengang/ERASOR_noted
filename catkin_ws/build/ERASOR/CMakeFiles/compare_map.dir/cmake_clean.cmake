@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/g/workspace/opensource/catkin_ws/devel/lib/erasor/compare_map"
-  "/home/g/workspace/opensource/catkin_ws/devel/lib/erasor/compare_map.pdb"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/erasor/compare_map"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/erasor/compare_map.pdb"
   "CMakeFiles/compare_map.dir/src/compare_map.cpp.o"
   "CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o"
 )

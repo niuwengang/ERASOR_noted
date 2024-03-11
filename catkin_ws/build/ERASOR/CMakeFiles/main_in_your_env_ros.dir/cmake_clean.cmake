@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/g/workspace/opensource/catkin_ws/devel/lib/erasor/main_in_your_env_ros"
-  "/home/g/workspace/opensource/catkin_ws/devel/lib/erasor/main_in_your_env_ros.pdb"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/erasor/main_in_your_env_ros"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/lib/erasor/main_in_your_env_ros.pdb"
   "CMakeFiles/main_in_your_env_ros.dir/src/offline_map_updater/main_in_your_env.cpp.o"
   "CMakeFiles/main_in_your_env_ros.dir/src/offline_map_updater/src/OfflineMapUpdater.cpp.o"
   "CMakeFiles/main_in_your_env_ros.dir/src/offline_map_updater/src/erasor.cpp.o"

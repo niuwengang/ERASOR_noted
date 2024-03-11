@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/g/workspace/opensource/catkin_ws/devel/share/roseus/ros/erasor/manifest.l"
-  "/home/g/workspace/opensource/catkin_ws/devel/share/roseus/ros/erasor/msg/node.l"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/share/roseus/ros/erasor/manifest.l"
+  "/home/g/workspace/ERASOR_noted/catkin_ws/devel/share/roseus/ros/erasor/msg/node.l"
   "CMakeFiles/erasor_generate_messages_eus"
 )
 
