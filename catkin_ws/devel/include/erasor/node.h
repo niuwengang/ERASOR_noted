@@ -36,7 +36,7 @@ struct node_
     , lidar()
     , lidarOdom()
     , image()
-    , gps()  {
+    , g()  {
       odomCov.assign(0.0);
   }
   node_(const ContainerAllocator& _alloc)
@@ -46,7 +46,7 @@ struct node_
     , lidar(_alloc)
     , lidarOdom(_alloc)
     , image(_alloc)
-    , gps(_alloc)  {
+    , g(_alloc)  {
   (void)_alloc;
       odomCov.assign(0.0);
   }
@@ -71,8 +71,8 @@ struct node_
    typedef  ::sensor_msgs::CompressedImage_<ContainerAllocator>  _image_type;
   _image_type image;
 
-   typedef  ::sensor_msgs::NavSatFix_<ContainerAllocator>  _gps_type;
-  _gps_type gps;
+   typedef  ::sensor_msgs::NavSatFix_<ContainerAllocator>  _g_type;
+  _g_type g;
 
 
 
@@ -109,7 +109,7 @@ bool operator==(const ::erasor::node_<ContainerAllocator1> & lhs, const ::erasor
     lhs.lidar == rhs.lidar &&
     lhs.lidarOdom == rhs.lidarOdom &&
     lhs.image == rhs.image &&
-    lhs.gps == rhs.gps;
+    lhs.g == rhs.g;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -166,12 +166,12 @@ struct MD5Sum< ::erasor::node_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "369562eda9795c55aa23013a6af260da";
+    return "0570ad233487d687f47841824e86c07e";
   }
 
   static const char* value(const ::erasor::node_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x369562eda9795c55ULL;
-  static const uint64_t static_value2 = 0xaa23013a6af260daULL;
+  static const uint64_t static_value1 = 0x0570ad233487d687ULL;
+  static const uint64_t static_value2 = 0xf47841824e86c07eULL;
 };
 
 template<class ContainerAllocator>
@@ -196,8 +196,7 @@ struct Definition< ::erasor::node_<ContainerAllocator> >
 "sensor_msgs/PointCloud2 lidar\n"
 "geometry_msgs/Pose lidarOdom\n"
 "sensor_msgs/CompressedImage image\n"
-"sensor_msgs/NavSatFix gps\n"
-"\n"
+"sensor_msgs/NavSatFix g\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
 "# Standard metadata for higher-level stamped data types.\n"
@@ -397,7 +396,7 @@ namespace serialization
       stream.next(m.lidar);
       stream.next(m.lidarOdom);
       stream.next(m.image);
-      stream.next(m.gps);
+      stream.next(m.g);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -437,9 +436,9 @@ struct Printer< ::erasor::node_<ContainerAllocator> >
     s << indent << "image: ";
     s << std::endl;
     Printer< ::sensor_msgs::CompressedImage_<ContainerAllocator> >::stream(s, indent + "  ", v.image);
-    s << indent << "gps: ";
+    s << indent << "g: ";
     s << std::endl;
-    Printer< ::sensor_msgs::NavSatFix_<ContainerAllocator> >::stream(s, indent + "  ", v.gps);
+    Printer< ::sensor_msgs::NavSatFix_<ContainerAllocator> >::stream(s, indent + "  ", v.g);
   }
 };
 

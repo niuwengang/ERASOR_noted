@@ -11,7 +11,7 @@ import sensor_msgs.msg
 import std_msgs.msg
 
 class node(genpy.Message):
-  _md5sum = "369562eda9795c55aa23013a6af260da"
+  _md5sum = "0570ad233487d687f47841824e86c07e"
   _type = "erasor/node"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """std_msgs/Header header
@@ -20,8 +20,7 @@ float64[36] odomCov
 sensor_msgs/PointCloud2 lidar
 geometry_msgs/Pose lidarOdom
 sensor_msgs/CompressedImage image
-sensor_msgs/NavSatFix gps
-
+sensor_msgs/NavSatFix g
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -198,7 +197,7 @@ uint16 SERVICE_GALILEO = 8
 
 uint16 service
 """
-  __slots__ = ['header','odom','odomCov','lidar','lidarOdom','image','gps']
+  __slots__ = ['header','odom','odomCov','lidar','lidarOdom','image','g']
   _slot_types = ['std_msgs/Header','geometry_msgs/Pose','float64[36]','sensor_msgs/PointCloud2','geometry_msgs/Pose','sensor_msgs/CompressedImage','sensor_msgs/NavSatFix']
 
   def __init__(self, *args, **kwds):
@@ -209,7 +208,7 @@ uint16 service
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,odom,odomCov,lidar,lidarOdom,image,gps
+       header,odom,odomCov,lidar,lidarOdom,image,g
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -230,8 +229,8 @@ uint16 service
         self.lidarOdom = geometry_msgs.msg.Pose()
       if self.image is None:
         self.image = sensor_msgs.msg.CompressedImage()
-      if self.gps is None:
-        self.gps = sensor_msgs.msg.NavSatFix()
+      if self.g is None:
+        self.g = sensor_msgs.msg.NavSatFix()
     else:
       self.header = std_msgs.msg.Header()
       self.odom = geometry_msgs.msg.Pose()
@@ -239,7 +238,7 @@ uint16 service
       self.lidar = sensor_msgs.msg.PointCloud2()
       self.lidarOdom = geometry_msgs.msg.Pose()
       self.image = sensor_msgs.msg.CompressedImage()
-      self.gps = sensor_msgs.msg.NavSatFix()
+      self.g = sensor_msgs.msg.NavSatFix()
 
   def _get_types(self):
     """
@@ -316,17 +315,17 @@ uint16 service
       else:
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I().pack(_x.gps.header.seq, _x.gps.header.stamp.secs, _x.gps.header.stamp.nsecs))
-      _x = self.gps.header.frame_id
+      buff.write(_get_struct_3I().pack(_x.g.header.seq, _x.g.header.stamp.secs, _x.g.header.stamp.nsecs))
+      _x = self.g.header.frame_id
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_bH3d().pack(_x.gps.status.status, _x.gps.status.service, _x.gps.latitude, _x.gps.longitude, _x.gps.altitude))
-      buff.write(_get_struct_9d().pack(*self.gps.position_covariance))
-      _x = self.gps.position_covariance_type
+      buff.write(_get_struct_bH3d().pack(_x.g.status.status, _x.g.status.service, _x.g.latitude, _x.g.longitude, _x.g.altitude))
+      buff.write(_get_struct_9d().pack(*self.g.position_covariance))
+      _x = self.g.position_covariance_type
       buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
@@ -349,8 +348,8 @@ uint16 service
         self.lidarOdom = geometry_msgs.msg.Pose()
       if self.image is None:
         self.image = sensor_msgs.msg.CompressedImage()
-      if self.gps is None:
-        self.gps = sensor_msgs.msg.NavSatFix()
+      if self.g is None:
+        self.g = sensor_msgs.msg.NavSatFix()
       end = 0
       _x = self
       start = end
@@ -452,26 +451,26 @@ uint16 service
       _x = self
       start = end
       end += 12
-      (_x.gps.header.seq, _x.gps.header.stamp.secs, _x.gps.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      (_x.g.header.seq, _x.g.header.stamp.secs, _x.g.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
       start = end
       end += length
       if python3:
-        self.gps.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        self.g.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
       else:
-        self.gps.header.frame_id = str[start:end]
+        self.g.header.frame_id = str[start:end]
       _x = self
       start = end
       end += 27
-      (_x.gps.status.status, _x.gps.status.service, _x.gps.latitude, _x.gps.longitude, _x.gps.altitude,) = _get_struct_bH3d().unpack(str[start:end])
+      (_x.g.status.status, _x.g.status.service, _x.g.latitude, _x.g.longitude, _x.g.altitude,) = _get_struct_bH3d().unpack(str[start:end])
       start = end
       end += 72
-      self.gps.position_covariance = _get_struct_9d().unpack(str[start:end])
+      self.g.position_covariance = _get_struct_9d().unpack(str[start:end])
       start = end
       end += 1
-      (self.gps.position_covariance_type,) = _get_struct_B().unpack(str[start:end])
+      (self.g.position_covariance_type,) = _get_struct_B().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -547,17 +546,17 @@ uint16 service
       else:
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I().pack(_x.gps.header.seq, _x.gps.header.stamp.secs, _x.gps.header.stamp.nsecs))
-      _x = self.gps.header.frame_id
+      buff.write(_get_struct_3I().pack(_x.g.header.seq, _x.g.header.stamp.secs, _x.g.header.stamp.nsecs))
+      _x = self.g.header.frame_id
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_bH3d().pack(_x.gps.status.status, _x.gps.status.service, _x.gps.latitude, _x.gps.longitude, _x.gps.altitude))
-      buff.write(self.gps.position_covariance.tostring())
-      _x = self.gps.position_covariance_type
+      buff.write(_get_struct_bH3d().pack(_x.g.status.status, _x.g.status.service, _x.g.latitude, _x.g.longitude, _x.g.altitude))
+      buff.write(self.g.position_covariance.tostring())
+      _x = self.g.position_covariance_type
       buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
@@ -581,8 +580,8 @@ uint16 service
         self.lidarOdom = geometry_msgs.msg.Pose()
       if self.image is None:
         self.image = sensor_msgs.msg.CompressedImage()
-      if self.gps is None:
-        self.gps = sensor_msgs.msg.NavSatFix()
+      if self.g is None:
+        self.g = sensor_msgs.msg.NavSatFix()
       end = 0
       _x = self
       start = end
@@ -684,26 +683,26 @@ uint16 service
       _x = self
       start = end
       end += 12
-      (_x.gps.header.seq, _x.gps.header.stamp.secs, _x.gps.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      (_x.g.header.seq, _x.g.header.stamp.secs, _x.g.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
       start = end
       end += length
       if python3:
-        self.gps.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        self.g.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
       else:
-        self.gps.header.frame_id = str[start:end]
+        self.g.header.frame_id = str[start:end]
       _x = self
       start = end
       end += 27
-      (_x.gps.status.status, _x.gps.status.service, _x.gps.latitude, _x.gps.longitude, _x.gps.altitude,) = _get_struct_bH3d().unpack(str[start:end])
+      (_x.g.status.status, _x.g.status.service, _x.g.latitude, _x.g.longitude, _x.g.altitude,) = _get_struct_bH3d().unpack(str[start:end])
       start = end
       end += 72
-      self.gps.position_covariance = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=9)
+      self.g.position_covariance = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=9)
       start = end
       end += 1
-      (self.gps.position_covariance_type,) = _get_struct_B().unpack(str[start:end])
+      (self.g.position_covariance_type,) = _get_struct_B().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill

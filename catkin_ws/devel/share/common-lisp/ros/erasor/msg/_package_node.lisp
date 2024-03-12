@@ -11,6 +11,6 @@
           LIDARODOM
           IMAGE-VAL
           IMAGE
-          GPS-VAL
-          GPS
+          G-VAL
+          G
 ))

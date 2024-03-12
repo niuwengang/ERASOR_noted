@@ -129,22 +129,14 @@ signal.h
 /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/include/tools/signal.h
 
 /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/main_kitti.cpp
-ros/ros.h
--
 erasor/OfflineMapUpdater.h
 /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/erasor/OfflineMapUpdater.h
+ros/ros.h
+-
 
 /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/src/OfflineMapUpdater.cpp
 erasor/OfflineMapUpdater.h
 /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/src/erasor/OfflineMapUpdater.h
-
-/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/src/erasor.cpp
-erasor/erasor.h
-/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/src/erasor/erasor.h
-
-/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/src/erasor_utils.cpp
-tools/erasor_utils.hpp
-/home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/offline_map_updater/src/tools/erasor_utils.hpp
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string

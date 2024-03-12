@@ -27,7 +27,7 @@ class node {
       this.lidar = null;
       this.lidarOdom = null;
       this.image = null;
-      this.gps = null;
+      this.g = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -66,11 +66,11 @@ class node {
       else {
         this.image = new sensor_msgs.msg.CompressedImage();
       }
-      if (initObj.hasOwnProperty('gps')) {
-        this.gps = initObj.gps
+      if (initObj.hasOwnProperty('g')) {
+        this.g = initObj.g
       }
       else {
-        this.gps = new sensor_msgs.msg.NavSatFix();
+        this.g = new sensor_msgs.msg.NavSatFix();
       }
     }
   }
@@ -93,8 +93,8 @@ class node {
     bufferOffset = geometry_msgs.msg.Pose.serialize(obj.lidarOdom, buffer, bufferOffset);
     // Serialize message field [image]
     bufferOffset = sensor_msgs.msg.CompressedImage.serialize(obj.image, buffer, bufferOffset);
-    // Serialize message field [gps]
-    bufferOffset = sensor_msgs.msg.NavSatFix.serialize(obj.gps, buffer, bufferOffset);
+    // Serialize message field [g]
+    bufferOffset = sensor_msgs.msg.NavSatFix.serialize(obj.g, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -114,8 +114,8 @@ class node {
     data.lidarOdom = geometry_msgs.msg.Pose.deserialize(buffer, bufferOffset);
     // Deserialize message field [image]
     data.image = sensor_msgs.msg.CompressedImage.deserialize(buffer, bufferOffset);
-    // Deserialize message field [gps]
-    data.gps = sensor_msgs.msg.NavSatFix.deserialize(buffer, bufferOffset);
+    // Deserialize message field [g]
+    data.g = sensor_msgs.msg.NavSatFix.deserialize(buffer, bufferOffset);
     return data;
   }
 
@@ -124,7 +124,7 @@ class node {
     length += std_msgs.msg.Header.getMessageSize(object.header);
     length += sensor_msgs.msg.PointCloud2.getMessageSize(object.lidar);
     length += sensor_msgs.msg.CompressedImage.getMessageSize(object.image);
-    length += sensor_msgs.msg.NavSatFix.getMessageSize(object.gps);
+    length += sensor_msgs.msg.NavSatFix.getMessageSize(object.g);
     return length + 400;
   }
 
@@ -135,7 +135,7 @@ class node {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '369562eda9795c55aa23013a6af260da';
+    return '0570ad233487d687f47841824e86c07e';
   }
 
   static messageDefinition() {
@@ -147,8 +147,7 @@ class node {
     sensor_msgs/PointCloud2 lidar
     geometry_msgs/Pose lidarOdom
     sensor_msgs/CompressedImage image
-    sensor_msgs/NavSatFix gps
-    
+    sensor_msgs/NavSatFix g
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -376,11 +375,11 @@ class node {
       resolved.image = new sensor_msgs.msg.CompressedImage()
     }
 
-    if (msg.gps !== undefined) {
-      resolved.gps = sensor_msgs.msg.NavSatFix.Resolve(msg.gps)
+    if (msg.g !== undefined) {
+      resolved.g = sensor_msgs.msg.NavSatFix.Resolve(msg.g)
     }
     else {
-      resolved.gps = new sensor_msgs.msg.NavSatFix()
+      resolved.g = new sensor_msgs.msg.NavSatFix()
     }
 
     return resolved;

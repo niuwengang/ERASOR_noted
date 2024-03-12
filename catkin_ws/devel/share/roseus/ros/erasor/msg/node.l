@@ -20,7 +20,7 @@
 
 (defclass erasor::node
   :super ros::object
-  :slots (_header _odom _odomCov _lidar _lidarOdom _image _gps ))
+  :slots (_header _odom _odomCov _lidar _lidarOdom _image _g ))
 
 (defmethod erasor::node
   (:init
@@ -31,7 +31,7 @@
     ((:lidar __lidar) (instance sensor_msgs::PointCloud2 :init))
     ((:lidarOdom __lidarOdom) (instance geometry_msgs::Pose :init))
     ((:image __image) (instance sensor_msgs::CompressedImage :init))
-    ((:gps __gps) (instance sensor_msgs::NavSatFix :init))
+    ((:g __g) (instance sensor_msgs::NavSatFix :init))
     )
    (send-super :init)
    (setq _header __header)
@@ -40,7 +40,7 @@
    (setq _lidar __lidar)
    (setq _lidarOdom __lidarOdom)
    (setq _image __image)
-   (setq _gps __gps)
+   (setq _g __g)
    self)
   (:header
    (&rest __header)
@@ -80,13 +80,13 @@
      (progn
        (if __image (setq _image (car __image)))
        _image)))
-  (:gps
-   (&rest __gps)
-   (if (keywordp (car __gps))
-       (send* _gps __gps)
+  (:g
+   (&rest __g)
+   (if (keywordp (car __g))
+       (send* _g __g)
      (progn
-       (if __gps (setq _gps (car __gps)))
-       _gps)))
+       (if __g (setq _g (car __g)))
+       _g)))
   (:serialization-length
    ()
    (+
@@ -102,8 +102,8 @@
     (send _lidarOdom :serialization-length)
     ;; sensor_msgs/CompressedImage _image
     (send _image :serialization-length)
-    ;; sensor_msgs/NavSatFix _gps
-    (send _gps :serialization-length)
+    ;; sensor_msgs/NavSatFix _g
+    (send _g :serialization-length)
     ))
   (:serialize
    (&optional strm)
@@ -123,8 +123,8 @@
        (send _lidarOdom :serialize s)
      ;; sensor_msgs/CompressedImage _image
        (send _image :serialize s)
-     ;; sensor_msgs/NavSatFix _gps
-       (send _gps :serialize s)
+     ;; sensor_msgs/NavSatFix _g
+       (send _g :serialize s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -143,13 +143,13 @@
      (send _lidarOdom :deserialize buf ptr-) (incf ptr- (send _lidarOdom :serialization-length))
    ;; sensor_msgs/CompressedImage _image
      (send _image :deserialize buf ptr-) (incf ptr- (send _image :serialization-length))
-   ;; sensor_msgs/NavSatFix _gps
-     (send _gps :deserialize buf ptr-) (incf ptr- (send _gps :serialization-length))
+   ;; sensor_msgs/NavSatFix _g
+     (send _g :deserialize buf ptr-) (incf ptr- (send _g :serialization-length))
    ;;
    self)
   )
 
-(setf (get erasor::node :md5sum-) "369562eda9795c55aa23013a6af260da")
+(setf (get erasor::node :md5sum-) "0570ad233487d687f47841824e86c07e")
 (setf (get erasor::node :datatype-) "erasor/node")
 (setf (get erasor::node :definition-)
       "std_msgs/Header header
@@ -158,8 +158,7 @@ float64[36] odomCov
 sensor_msgs/PointCloud2 lidar
 geometry_msgs/Pose lidarOdom
 sensor_msgs/CompressedImage image
-sensor_msgs/NavSatFix gps
-
+sensor_msgs/NavSatFix g
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -340,6 +339,6 @@ uint16 service
 
 
 
-(provide :erasor/node "369562eda9795c55aa23013a6af260da")
+(provide :erasor/node "0570ad233487d687f47841824e86c07e")
 
 

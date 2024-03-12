@@ -125,10 +125,10 @@ mapgen.hpp
 /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/mapgen/mapgen.hpp
 
 /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/mapgen/mapgen.hpp
-erasor/node.h
--
 tools/erasor_utils.hpp
 /home/g/workspace/ERASOR_noted/catkin_ws/src/ERASOR/src/mapgen/tools/erasor_utils.hpp
+erasor/node.h
+-
 math.h
 -
 
