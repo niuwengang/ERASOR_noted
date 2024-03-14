@@ -1,0 +1,2 @@
+ERASOR
+-DCATKIN_DEVEL_PREFIX=/home/g/workspace/ERASOR_noted/devel -DCMAKE_INSTALL_PREFIX=/home/g/workspace/ERASOR_noted/install -G Unix Makefiles

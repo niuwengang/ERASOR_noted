@@ -1,0 +1,8 @@
+prefix=/home/g/workspace/ERASOR_noted/devel
+
+Name: erasor
+Description: Description of erasor
+Version: 0.0.0
+Cflags: -I/home/g/workspace/ERASOR_noted/devel/include -I/home/g/workspace/ERASOR_noted/src/ERASOR/include
+Libs: -L${prefix}/lib 
+Requires: 

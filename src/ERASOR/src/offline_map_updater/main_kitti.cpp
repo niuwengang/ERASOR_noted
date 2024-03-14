@@ -1,5 +1,5 @@
-#include <ros/ros.h>
 #include "erasor/OfflineMapUpdater.h"
+#include <ros/ros.h>
 
 int main(int argc, char **argv)
 {
