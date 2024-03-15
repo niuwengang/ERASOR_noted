@@ -282,12 +282,14 @@ void OfflineMapUpdater::callback_node(const erasor::node::ConstPtr &msg)
             reassign_submap(x_curr, y_curr);
         }
 
-        auto start_voi = ros::Time::now().toSec(); // 计一下时间
-        fetch_VoI(x_curr, y_curr, *map_voi_, *map_outskirts_);
-        auto end_voi = ros::Time::now().toSec(); //
+        auto start_voi = ros::Time::now().toSec();             // 计一下时间
+        fetch_VoI(x_curr, y_curr, *map_voi_, *map_outskirts_); // 获取voi区域
+        auto end_voi = ros::Time::now().toSec();               //
 
-        ROS_INFO_STREAM("\033[1;32m" << setw(22) << "Extracting VoI takes " << end_voi - start_voi << "s\033[0m");
+        ROS_INFO_STREAM("\033[1;32m" << setw(22) << "Extracting VoI takes " << end_voi - start_voi
+                                     << "s\033[0m"); // 时间统计
 
+        /*debug map_voi_和query_voi_此时都是车体坐标系 */
         pub_debug_map_egocentric_.publish(erasor_utils::cloud2msg(*map_voi_));
         pub_debug_query_egocentric_.publish(erasor_utils::cloud2msg(*query_voi_));
 
@@ -439,14 +441,14 @@ void OfflineMapUpdater::fetch_VoI(double x_criterion, double y_criterion, pcl::P
 {
     // 1. Divide map_arranged into map_central and map_outskirts
     static double margin = 0;
-    if (!dst.empty())
+    if (!dst.empty()) // 清空dst
         dst.clear();
-    if (!outskirts.empty())
+    if (!outskirts.empty()) // 清空边缘
         outskirts.clear();
     if (!map_voi_wrt_origin_->points.empty())
-        map_voi_wrt_origin_->points.clear(); // Inliers are still on the map frame
+        map_voi_wrt_origin_->points.clear(); //!?? Inliers are still on the map frame
 
-    if (mode == "naive")
+    if (mode == "naive") // 默认 切割出圆内
     {
         double max_dist_square = pow(max_range_ + margin, 2);
 
@@ -503,7 +505,7 @@ void OfflineMapUpdater::fetch_VoI(double x_criterion, double y_criterion, pcl::P
                     << map_voi_wrt_origin_->points.size() << " + \033[4;32m" << outskirts.points.size() << "\033[0m");
 
     pcl::PointCloud<pcl::PointXYZI>::Ptr ptr_transformed(new pcl::PointCloud<pcl::PointXYZI>);
-    pcl::transformPointCloud(*map_voi_wrt_origin_, *ptr_transformed, tf_body2origin_.inverse());
+    pcl::transformPointCloud(*map_voi_wrt_origin_, *ptr_transformed, tf_body2origin_.inverse()); // 转到车体坐标系
     dst = *ptr_transformed;
 }
 
