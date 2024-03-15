@@ -11,39 +11,41 @@
 // 0 -> BLUE
 #define MAP_IS_HIGHER 0.5
 #define CURR_IS_HIGHER 1.0
-#define LITTLE_NUM 0.0       // For viz: blue - not activated
-#define BLOCKED 0.8         // For viz
+#define LITTLE_NUM 0.0 // For viz: blue - not activated
+#define BLOCKED 0.8    // For viz
 
 #define MERGE_BINS 0.25
 #define NOT_ASSIGNED 0.0
 // ground params
 
-
 using namespace std;
 
-struct Bin {
+struct Bin
+{
     double max_h;
     double min_h;
     double x;
     double y;
     double status;
-    bool   is_occupied;
+    bool is_occupied;
 
     pcl::PointCloud<pcl::PointXYZI> points;
 };
 
-struct DynamicBinIdx {
+struct DynamicBinIdx
+{
     int r;
     int theta;
 };
 
-typedef vector<vector<Bin> > R_POD;
-typedef vector<Bin>          Ring;
+typedef vector<vector<Bin>> R_POD;
+typedef vector<Bin> Ring;
 
-class ERASOR {
-public:
-
-    ERASOR(ros::NodeHandle *nodehandler) : nh(*nodehandler) {
+class ERASOR
+{
+  public:
+    ERASOR(ros::NodeHandle *nodehandler) : nh(*nodehandler)
+    {
         nh.param("/erasor/max_range", max_r, 10.0);
         nh.param("/erasor/num_rings", num_rings, 20);
         nh.param("/erasor/num_sectors", num_sectors, 60);
@@ -60,20 +62,20 @@ public:
         nh.param("/erasor/gf_th_seeds_height", th_seeds_heights_, 0.5);
         nh.param("/erasor/map_voxel_size", map_voxel_size_, 0.2);
 
-        ring_size   = max_r / num_rings;
+        ring_size = max_r / num_rings;
         sector_size = 2 * PI / num_sectors;
 
         // SCDR is our project's name
-        pub_map_rejected  = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/map_rejected", 100);
+        pub_map_rejected = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/map_rejected", 100);
         pub_curr_rejected = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/curr_rejected", 100);
-        pub_map_init      = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/map_init", 100);
-        pub_curr_init     = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/curr_init", 100);
+        pub_map_init = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/map_init", 100);
+        pub_curr_init = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/curr_init", 100);
 
-        pub_map_marker     = nh.advertise<jsk_recognition_msgs::PolygonArray>("/SCDR/debug/map_marker", 100);
-        pub_curr_marker    = nh.advertise<jsk_recognition_msgs::PolygonArray>("/SCDR/debug/curr_marker", 100);
+        pub_map_marker = nh.advertise<jsk_recognition_msgs::PolygonArray>("/SCDR/debug/map_marker", 100);
+        pub_curr_marker = nh.advertise<jsk_recognition_msgs::PolygonArray>("/SCDR/debug/curr_marker", 100);
         pub_viz_bin_marker = nh.advertise<jsk_recognition_msgs::PolygonArray>("/SCDR/debug/polygons_marker", 100);
 
-        pub_ground   = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/ground", 100);
+        pub_ground = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/ground", 100);
         pub_arranged = nh.advertise<sensor_msgs::PointCloud2>("/SCDR/debug/arranged", 100);
 
         std::cout << "-----\033[1;32mParams. of ERASOR\033[0m-----" << std::endl;
@@ -106,23 +108,17 @@ public:
     ~ERASOR();
 
     // Inputs: transformed & cut pcs
-    void set_inputs(
-            const pcl::PointCloud<pcl::PointXYZI> &map_voi,
-            const pcl::PointCloud<pcl::PointXYZI> &query_voi);
+    void set_inputs(const pcl::PointCloud<pcl::PointXYZI> &map_voi, const pcl::PointCloud<pcl::PointXYZI> &query_voi);
 
     void compare_then_select(int frame);
 
-    void get_pcs(
-            pcl::PointCloud<pcl::PointXYZI> &arranged,
-            pcl::PointCloud<pcl::PointXYZI> &complement);
+    void get_pcs(pcl::PointCloud<pcl::PointXYZI> &arranged, pcl::PointCloud<pcl::PointXYZI> &complement);
 
     // -------------------------------
     // Version 2 algorithm!
     void compare_vois_and_revert_ground(int frame);
 
-    void get_static_estimate(
-            pcl::PointCloud<pcl::PointXYZI> &arranged,
-            pcl::PointCloud<pcl::PointXYZI> &complement);
+    void get_static_estimate(pcl::PointCloud<pcl::PointXYZI> &arranged, pcl::PointCloud<pcl::PointXYZI> &complement);
 
     pcl::PointCloud<pcl::PointXYZI> ground_viz; // Visualized in pcs_v2!
     // -------------------------------
@@ -132,34 +128,32 @@ public:
     bool is_dynamic_obj_close(R_POD &r_pod_selected, int r_target, int theta_target, int r_range, int theta_range);
 
     // -------------------------------
-    void get_outliers(
-            pcl::PointCloud<pcl::PointXYZI> &map_rejected,
-            pcl::PointCloud<pcl::PointXYZI> &curr_rejected);
+    void get_outliers(pcl::PointCloud<pcl::PointXYZI> &map_rejected, pcl::PointCloud<pcl::PointXYZI> &curr_rejected);
 
-    pcl::PointCloud<pcl::PointXYZI> debug_curr_rejected;
-    pcl::PointCloud<pcl::PointXYZI> debug_map_rejected;
-    pcl::PointCloud<pcl::PointXYZI> map_complement;
+    pcl::PointCloud<pcl::PointXYZI> debug_curr_rejected; // cur障碍物点云
+    pcl::PointCloud<pcl::PointXYZI> debug_map_rejected;  // map障碍物点云
+    pcl::PointCloud<pcl::PointXYZI> map_complement;      //! 待定
 
-    R_POD r_pod_map; // R_POD of Map
-    R_POD r_pod_curr; // R_POD of current pointcloud
+    R_POD r_pod_map;      // R_POD of Map
+    R_POD r_pod_curr;     // R_POD of current pointcloud
     R_POD r_pod_selected; // R_POD of current pointcloud
 
     double get_max_range();
 
-private:
+  private:
     std::vector<int> DYNAMIC_CLASSES = {252, 253, 254, 255, 256, 257, 258, 259};
 
     ros::NodeHandle nh;
-    ros::Publisher  pub_map_rejected;
-    ros::Publisher  pub_curr_rejected;
-    ros::Publisher  pub_map_init, pub_curr_init;
-    ros::Publisher  pub_map_marker, pub_curr_marker, pub_viz_bin_marker;
-    ros::Publisher  pub_ground, pub_arranged;
+    ros::Publisher pub_map_rejected;
+    ros::Publisher pub_curr_rejected;
+    ros::Publisher pub_map_init, pub_curr_init;
+    ros::Publisher pub_map_marker, pub_curr_marker, pub_viz_bin_marker;
+    ros::Publisher pub_ground, pub_arranged;
 
     double max_r;
-    int    num_rings;
-    int    num_sectors;
-    int    num_lowest_pts;
+    int num_rings;
+    int num_sectors;
+    int num_lowest_pts;
 
     double ring_size;
     double sector_size;
@@ -168,7 +162,7 @@ private:
     double max_h;
     double scan_ratio_threshold;
     double th_bin_max_h;
-    int    minimum_num_pts;
+    int minimum_num_pts;
     double rejection_ratio;
     double map_voxel_size_;
 
@@ -189,33 +183,27 @@ private:
 
     void voi2r_pod(const pcl::PointCloud<pcl::PointXYZI> &src, R_POD &r_pod);
 
-    void voi2r_pod(
-            const pcl::PointCloud<pcl::PointXYZI> &src, R_POD &r_pod,
-            pcl::PointCloud<pcl::PointXYZI> &complement);
+    void voi2r_pod(const pcl::PointCloud<pcl::PointXYZI> &src, R_POD &r_pod,
+                   pcl::PointCloud<pcl::PointXYZI> &complement);
 
     void viz_pseudo_occupancy();
 
-
     // ------ Ground extraction ------------------------
-    double th_dist_; // params!
-    int    iter_groundfilter_; // params!
-    int    num_lprs_;
+    double th_dist_;        // params!
+    int iter_groundfilter_; // params!
+    int num_lprs_;
     double th_seeds_heights_;
 
     Eigen::MatrixXf normal_;
-    double          th_dist_d_, d_;
+    double th_dist_d_, d_;
 
     void estimate_plane_(const pcl::PointCloud<pcl::PointXYZI> &ground);
 
-    void extract_initial_seeds_(
-            const pcl::PointCloud<pcl::PointXYZI> &p_sorted,
-            pcl::PointCloud<pcl::PointXYZI> &init_seeds);
+    void extract_initial_seeds_(const pcl::PointCloud<pcl::PointXYZI> &p_sorted,
+                                pcl::PointCloud<pcl::PointXYZI> &init_seeds);
 
-    void extract_ground(
-            const pcl::PointCloud<pcl::PointXYZI> &src,
-            pcl::PointCloud<pcl::PointXYZI> &dst,
-            pcl::PointCloud<pcl::PointXYZI> &outliers);
-
+    void extract_ground(const pcl::PointCloud<pcl::PointXYZI> &src, pcl::PointCloud<pcl::PointXYZI> &dst,
+                        pcl::PointCloud<pcl::PointXYZI> &outliers);
 
     bool has_dynamic(Bin &bin);
 
@@ -223,8 +211,5 @@ private:
 
     void r_pod2pc(const R_POD &sc, pcl::PointCloud<pcl::PointXYZI> &pc);
 
-
     geometry_msgs::PolygonStamped set_polygons(int r_idx, int theta_idx, int num_split = 3);
 };
-
-

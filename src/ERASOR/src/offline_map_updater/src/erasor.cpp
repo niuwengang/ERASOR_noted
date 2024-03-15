@@ -76,7 +76,7 @@ void ERASOR::set_inputs(const pcl::PointCloud<pcl::PointXYZI> &map_voi,
     clear(debug_curr_rejected);
     clear(debug_map_rejected);
     clear(map_complement);
-
+    /*1--清空bin*/
     for (int theta = 0; theta < num_sectors; ++theta)
     {
         for (int r = 0; r < num_rings; ++r)
@@ -86,6 +86,7 @@ void ERASOR::set_inputs(const pcl::PointCloud<pcl::PointXYZI> &map_voi,
             clear_bin(r_pod_selected[r][theta]);
         }
     }
+    /*2--voi转RPOD*/
     voi2r_pod(query_voi, r_pod_curr);
     voi2r_pod(map_voi, r_pod_map, map_complement);
 
@@ -105,7 +106,7 @@ void ERASOR::set_inputs(const pcl::PointCloud<pcl::PointXYZI> &map_voi,
 
 void ERASOR::pt2r_pod(const pcl::PointXYZI &pt, Bin &bin)
 {
-    bin.is_occupied = true;
+    bin.is_occupied = true; // 有点云覆盖
     bin.points.push_back(pt);
     if (pt.z >= bin.max_h)
     {
@@ -123,15 +124,15 @@ void ERASOR::voi2r_pod(const pcl::PointCloud<pcl::PointXYZI> &src, R_POD &r_pod)
 {
     for (auto const &pt : src.points)
     {
-        if (pt.z < max_h && pt.z > min_h)
+        if (pt.z < max_h && pt.z > min_h) // 合理高度范围内
         {
-            double r = xy2radius(pt.x, pt.y);
+            double r = xy2radius(pt.x, pt.y); // 合理圆域范围内
             if (r <= max_r)
             {
                 double theta = xy2theta(pt.x, pt.y);
 
-                int sector_idx = min(static_cast<int>((theta / sector_size)), num_sectors - 1);
-                int ring_idx = min(static_cast<int>((r / ring_size)), num_rings - 1);
+                int sector_idx = min(static_cast<int>((theta / sector_size)), num_sectors - 1); // sector id
+                int ring_idx = min(static_cast<int>((r / ring_size)), num_rings - 1);           // ring id
 
                 pt2r_pod(pt, r_pod.at(ring_idx).at(sector_idx));
             }
@@ -400,13 +401,13 @@ void ERASOR::get_outliers(pcl::PointCloud<pcl::PointXYZI> &map_rejected, pcl::Po
 // Color maybe changed
 void ERASOR::compare_vois_and_revert_ground(int frame)
 {
-    jsk_recognition_msgs::PolygonArray poly_list;
+    jsk_recognition_msgs::PolygonArray poly_list; // jsk可视化
     poly_list.header.frame_id = "map";
     poly_list.header.stamp = ros::Time::now();
 
     int dynamic_count;
     static int cnt = 0;
-    ground_viz.points.clear();
+    ground_viz.points.clear(); // 地面可视化
 
     //  std::string filename = "/home/shapelim/debug/" + std::to_string(frame) +".csv";
     //  ofstream output(filename.data());
@@ -419,8 +420,8 @@ void ERASOR::compare_vois_and_revert_ground(int frame)
         {
 
             // VISUALIZATION
-            Bin &bin_curr = r_pod_curr[r][theta];
-            Bin &bin_map = r_pod_map[r][theta];
+            Bin &bin_curr = r_pod_curr[r][theta]; // 获取到同位置的cur bin
+            Bin &bin_map = r_pod_map[r][theta];   // 获取到同位置的map bin
 
             // Min. num of pts criteria.
             if (bin_curr.points.size() < minimum_num_pts)
@@ -428,10 +429,10 @@ void ERASOR::compare_vois_and_revert_ground(int frame)
                 r_pod_selected[r][theta] = bin_map;
                 //        debug_curr_rejected += bin_curr.points;
 
-                auto polygons = set_polygons(r, theta, 3);
+                auto polygons = set_polygons(r, theta, 3); // todo
                 polygons.header = poly_list.header;
                 poly_list.polygons.push_back(polygons);
-                poly_list.likelihood.push_back(LITTLE_NUM);
+                poly_list.likelihood.push_back(LITTLE_NUM); //! ??
 
                 continue;
             }
@@ -442,13 +443,19 @@ void ERASOR::compare_vois_and_revert_ground(int frame)
                 // ---------------------------------
                 double map_h_diff = bin_map.max_h - bin_map.min_h;
                 double curr_h_diff = bin_curr.max_h - bin_curr.min_h;
+                /*
+                举例
+                map_h_diff=3 curr_h_diff=1 --> scan_ratio=1/3
+                map_h_diff=1 curr_h_diff=3 --> scan_ratio=1/3
+                比率变化
+                */
                 double scan_ratio = min(map_h_diff / curr_h_diff, curr_h_diff / map_h_diff);
 
-                if (scan_ratio < scan_ratio_threshold)
-                { // find dynamic!
+                if (scan_ratio < scan_ratio_threshold) // 达到比率变化
+                {                                      // find dynamic!
 
-                    if (map_h_diff >= curr_h_diff)
-                    { // Occupied -> Disappear  <<green>>
+                    if (map_h_diff >= curr_h_diff) // 同一bin 历史子图占据，现在帧空闲 标记绿色 障碍物消失
+                    {
                         auto polygons = set_polygons(r, theta, 3);
                         polygons.header = poly_list.header;
                         poly_list.polygons.push_back(polygons);
@@ -475,8 +482,8 @@ void ERASOR::compare_vois_and_revert_ground(int frame)
                             r_pod_selected[r][theta] = bin_map;
                         }
                     }
-                    else if (map_h_diff <= curr_h_diff)
-                    { // No objects exist -> Appear! <<red>>
+                    else if (map_h_diff <= curr_h_diff) // 同一bin 历史子图空闲，现在帧占据 标记红色 障碍物出现
+                    {
                         auto polygons = set_polygons(r, theta, 3);
                         polygons.header = poly_list.header;
                         poly_list.polygons.push_back(polygons);

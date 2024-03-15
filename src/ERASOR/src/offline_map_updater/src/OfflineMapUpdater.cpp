@@ -303,7 +303,7 @@ void OfflineMapUpdater::callback_node(const erasor::node::ConstPtr &msg)
             erasor_->compare_vois_and_revert_ground(msg->header.seq);
             erasor_->get_static_estimate(*map_static_estimate_, *map_egocentric_complement_);
         }
-        else if (erasor_version_ == 3)
+        else if (erasor_version_ == 3) // 默认3
         {
             erasor_->compare_vois_and_revert_ground_w_block(msg->header.seq);
             erasor_->get_static_estimate(*map_static_estimate_, *map_egocentric_complement_);
