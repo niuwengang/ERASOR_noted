@@ -305,8 +305,8 @@ void OfflineMapUpdater::callback_node(const erasor::node::ConstPtr &msg)
         }
         else if (erasor_version_ == 3) // 默认3
         {
-            erasor_->compare_vois_and_revert_ground_w_block(msg->header.seq);
-            erasor_->get_static_estimate(*map_static_estimate_, *map_egocentric_complement_);
+            erasor_->compare_vois_and_revert_ground_w_block(msg->header.seq); // 根据地面选出有动态障碍物的区域并去除
+            erasor_->get_static_estimate(*map_static_estimate_, *map_egocentric_complement_); // 提取出静态区域
         }
         else
         {
@@ -317,7 +317,7 @@ void OfflineMapUpdater::callback_node(const erasor::node::ConstPtr &msg)
 
         ROS_INFO_STREAM("\033[1;32m" << setw(22) << "ERASOR takes " << middle - start << "s\033[0m");
 
-        *map_filtered_ = *map_static_estimate_ + *map_egocentric_complement_;
+        *map_filtered_ = *map_static_estimate_ + *map_egocentric_complement_; // 去除动态障碍物的部分
 
         /*** Get currently rejected pts */
         erasor_->get_outliers(*map_rejected_, *query_rejected_);

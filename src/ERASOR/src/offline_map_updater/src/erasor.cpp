@@ -530,15 +530,15 @@ void ERASOR::compare_vois_and_revert_ground(int frame)
 // Retrieve piecewise with blocking!
 void ERASOR::compare_vois_and_revert_ground_w_block(int frame)
 {
-    jsk_recognition_msgs::PolygonArray poly_list;
+    jsk_recognition_msgs::PolygonArray poly_list; // 可视化
     poly_list.header.frame_id = "map";
     poly_list.header.stamp = ros::Time::now();
 
     int dynamic_count;
 
-    ground_viz.points.clear();
+    ground_viz.points.clear(); // 地面可视化
 
-    // 1. Update status!!
+    // 1--更新bin的状态 Update status!!
     for (int theta = 0; theta < num_sectors; theta++)
     {
         for (int r = 0; r < num_rings; r++)
@@ -568,9 +568,9 @@ void ERASOR::compare_vois_and_revert_ground_w_block(int frame)
                 if (bin_curr.is_occupied && bin_map.is_occupied)
                 {
                     if (scan_ratio < scan_ratio_threshold)
-                    { // find dynamic!
-                        if (map_h_diff >= curr_h_diff)
-                        { // Occupied -> Disappear  <<BLUE>>
+                    {                                  // find dynamic!
+                        if (map_h_diff >= curr_h_diff) // 疑似动态区域
+                        {                              // Occupied -> Disappear  <<BLUE>>
                             r_pod_selected[r][theta].status = MAP_IS_HIGHER;
                         }
                         else if (map_h_diff <= curr_h_diff)
@@ -602,14 +602,14 @@ void ERASOR::compare_vois_and_revert_ground_w_block(int frame)
         for (int r = 0; r < num_rings; r++)
         {
             // visualization
-            auto polygons = set_polygons(r, theta, 3);
+            auto polygons = set_polygons(r, theta, 3); //!
             polygons.header = poly_list.header;
             poly_list.polygons.push_back(polygons);
 
             Bin &bin_curr = r_pod_curr[r][theta];
             Bin &bin_map = r_pod_map[r][theta];
 
-            double OCCUPANCY_STATUS = r_pod_selected[r][theta].status;
+            double OCCUPANCY_STATUS = r_pod_selected[r][theta].status; // 区域状态
             if (OCCUPANCY_STATUS == LITTLE_NUM)
             {
                 r_pod_selected[r][theta] = bin_map;
@@ -632,16 +632,16 @@ void ERASOR::compare_vois_and_revert_ground_w_block(int frame)
                     if (!non_ground_.empty())
                         non_ground_.clear();
 
-                    extract_ground(bin_map.points, piecewise_ground_, non_ground_);
+                    extract_ground(bin_map.points, piecewise_ground_, non_ground_); // 地面提取
                     /*** It potentially requires lots of memories... */
-                    r_pod_selected[r][theta].points += piecewise_ground_;
+                    r_pod_selected[r][theta].points += piecewise_ground_; // 只取得地面点
 
                     /*** Thus, voxelization is conducted */
                     pcl::PointCloud<pcl::PointXYZI>::Ptr tmp(new pcl::PointCloud<pcl::PointXYZI>);
                     *tmp = r_pod_selected[r][theta].points;
                     erasor_utils::voxelize_preserving_labels(tmp, r_pod_selected[r][theta].points, map_voxel_size_);
 
-                    erasor_utils::count_stat_dyn(piecewise_ground_, num_ground_stat, num_ground_dyn);
+                    erasor_utils::count_stat_dyn(piecewise_ground_, num_ground_stat, num_ground_dyn); // 动态静态计数
                     ground_viz += piecewise_ground_;
                     debug_map_rejected += non_ground_;
 
@@ -649,7 +649,7 @@ void ERASOR::compare_vois_and_revert_ground_w_block(int frame)
                 }
                 else
                 {
-                    r_pod_selected[r][theta] = bin_map;
+                    r_pod_selected[r][theta] = bin_map; // 取全部map
                     r_pod_selected[r][theta].status = NOT_ASSIGNED;
 
                     poly_list.likelihood.push_back(NOT_ASSIGNED);
@@ -657,7 +657,7 @@ void ERASOR::compare_vois_and_revert_ground_w_block(int frame)
             }
             else if (OCCUPANCY_STATUS == CURR_IS_HIGHER)
             {
-                r_pod_selected[r][theta] = bin_map;
+                r_pod_selected[r][theta] = bin_map; // 取全部map
                 r_pod_selected[r][theta].status = CURR_IS_HIGHER;
 
                 poly_list.likelihood.push_back(CURR_IS_HIGHER);
@@ -666,7 +666,7 @@ void ERASOR::compare_vois_and_revert_ground_w_block(int frame)
             {
                 if (is_dynamic_obj_close(r_pod_selected, r, theta, 1, 1))
                 {
-                    r_pod_selected[r][theta] = bin_map;
+                    r_pod_selected[r][theta] = bin_map; // 取全部map
                     r_pod_selected[r][theta].status = BLOCKED;
 
                     poly_list.likelihood.push_back(BLOCKED);
@@ -674,7 +674,7 @@ void ERASOR::compare_vois_and_revert_ground_w_block(int frame)
                 else
                 {
                     // NOTE the dynamic object comes ....:(
-                    r_pod_selected[r][theta] = bin_map;
+                    r_pod_selected[r][theta] = bin_map; // 取全部map
                     r_pod_selected[r][theta].status = MERGE_BINS;
 
                     poly_list.likelihood.push_back(MERGE_BINS);
@@ -746,8 +746,8 @@ bool ERASOR::has_dynamic(Bin &bin)
 
 void ERASOR::get_static_estimate(pcl::PointCloud<pcl::PointXYZI> &arranged, pcl::PointCloud<pcl::PointXYZI> &complement)
 {
-    r_pod2pc(r_pod_selected, arranged);
-    arranged += ground_viz;
+    r_pod2pc(r_pod_selected, arranged); // RPOD里的点云提取出来
+    arranged += ground_viz;             // 加上地面
     if (ground_viz.size() != 0)
     {
         sensor_msgs::PointCloud2 pc2_ground = erasor_utils::cloud2msg(ground_viz);
