@@ -34,10 +34,6 @@ sensor_msgs/CompressedImage.h
 sensor_msgs/NavSatFix.h
 -
 
-/home/g/workspace/ERASOR_noted/src/ERASOR/include/erasor/OfflineMapUpdater.h
-erasor.h
-/home/g/workspace/ERASOR_noted/src/ERASOR/include/erasor/erasor.h
-
 /home/g/workspace/ERASOR_noted/src/ERASOR/include/erasor/erasor.h
 tools/erasor_utils.hpp
 /home/g/workspace/ERASOR_noted/src/ERASOR/include/erasor/tools/erasor_utils.hpp
@@ -128,27 +124,9 @@ std_msgs/Int32.h
 signal.h
 /home/g/workspace/ERASOR_noted/src/ERASOR/include/tools/signal.h
 
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/main_in_your_env.cpp
-tools/erasor_utils.hpp
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/tools/erasor_utils.hpp
-boost/format.hpp
--
-cstdlib
--
-erasor/OfflineMapUpdater.h
--
-
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/src/OfflineMapUpdater.cpp
-erasor/OfflineMapUpdater.h
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/src/erasor/OfflineMapUpdater.h
-
 /home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/src/erasor.cpp
 erasor/erasor.h
 /home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/src/erasor/erasor.h
-
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/src/erasor_utils.cpp
-tools/erasor_utils.hpp
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/src/tools/erasor_utils.hpp
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string

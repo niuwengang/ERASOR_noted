@@ -772,14 +772,14 @@ geometry_msgs::PolygonStamped ERASOR::set_polygons(int r_idx, int theta_idx, int
     geometry_msgs::Point32 point;
 
     point.z = max_h + 0.5;
-    // RL
+    // RL  左下
     double r_len = r_idx * ring_size;
     double angle = theta_idx * sector_size;
 
     point.x = r_len * cos(angle);
     point.y = r_len * sin(angle);
     polygons.polygon.points.push_back(point);
-    // RU
+    // RU  左上
     r_len = r_len + ring_size;
     point.x = r_len * cos(angle);
     point.y = r_len * sin(angle);
@@ -798,7 +798,7 @@ geometry_msgs::PolygonStamped ERASOR::set_polygons(int r_idx, int theta_idx, int
     point.x = r_len * cos(angle);
     point.y = r_len * sin(angle);
     polygons.polygon.points.push_back(point);
-
+    // LU -> LL
     for (int idx = 1; idx < num_split; ++idx)
     {
         angle = angle - sector_size / num_split;

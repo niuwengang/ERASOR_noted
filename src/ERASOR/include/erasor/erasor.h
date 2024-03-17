@@ -20,6 +20,7 @@
 
 using namespace std;
 
+/*划分子区域*/
 struct Bin
 {
     double max_h;

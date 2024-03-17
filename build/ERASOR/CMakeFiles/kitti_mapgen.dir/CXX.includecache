@@ -120,18 +120,6 @@ std_msgs/Int32.h
 signal.h
 /home/g/workspace/ERASOR_noted/src/ERASOR/include/tools/signal.h
 
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/mapgen/main.cpp
-mapgen.hpp
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/mapgen/mapgen.hpp
-
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/mapgen/mapgen.hpp
-erasor/node.h
--
-tools/erasor_utils.hpp
-/home/g/workspace/ERASOR_noted/src/ERASOR/src/mapgen/tools/erasor_utils.hpp
-math.h
--
-
 /home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/src/erasor_utils.cpp
 tools/erasor_utils.hpp
 /home/g/workspace/ERASOR_noted/src/ERASOR/src/offline_map_updater/src/tools/erasor_utils.hpp

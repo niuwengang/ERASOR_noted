@@ -624,7 +624,10 @@ ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o
 ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/ros/wall_timer.h
 ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/ros/wall_timer_options.h
 ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
+ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/sensor_msgs/CompressedImage.h
 ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/sensor_msgs/Image.h
+ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/sensor_msgs/NavSatFix.h
+ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/sensor_msgs/NavSatStatus.h
 ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/sensor_msgs/PointCloud2.h
 ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/sensor_msgs/PointField.h
 ERASOR/CMakeFiles/compare_map.dir/src/offline_map_updater/src/erasor_utils.cpp.o: /opt/ros/noetic/include/std_msgs/ColorRGBA.h
